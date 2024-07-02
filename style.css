@@ -1,0 +1,395 @@
+ /* google fonts link  */
+ @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600;700&display=swap');
+
+
+ /* custom variables */
+ :root {
+
+     /* primary gradient colors  */
+
+     --rock-gradient: hsl(349, 71%, 52%), hsl(349, 70%, 56%);
+     --paper-gradient: hsl(230, 89%, 62%), hsl(230, 89%, 65%);
+     --scissors-gradient: hsl(39, 89%, 49%), hsl(40, 84%, 53%);
+     --cyan-gradient: hsl(189, 59%, 53%), hsl(189, 58%, 57%);
+
+     /* neutral colors  */
+     --dark-text: hsl(229, 25%, 31%);
+     --score-text: hsl(229, 64%, 46%);
+     --header-outline: hsl(217, 16%, 45%);
+
+     /* accent colors  */
+     --whtie-clr: white;
+     --black-clr: black;
+
+     /* main backround gradient */
+     --radical-gradient: hsl(214, 47%, 23%), hsl(237, 49%, 15%);
+
+     /* font size  */
+     --fs-body: 1.6rem;
+
+     /* font family  */
+     --ff-primary: "Barlow Semi Condensed", sans-serif;
+
+     /* font weight */
+     --fw-regular: 400;
+     --fw-medium: 600;
+     --fw-bold: 700;
+
+     /* line height  */
+     --line-height-body: 1.5;
+
+     /* border radius  */
+     --border-radius: 15px;
+ }
+
+ /* css reset  */
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ *::after,
+ *::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ img,
+ picture,
+ video,
+ canvas,
+ svg {
+     display: block;
+     max-width: 100%;
+ }
+
+ p,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     overflow-wrap: break-word;
+ }
+
+ input,
+ button,
+ textarea,
+ select {
+     font: inherit;
+ }
+
+ html,
+ body {
+     width: 100%;
+     height: 100%;
+ }
+
+ html {
+     font-size: 62.5%;
+ }
+
+
+ body {
+     font-family: var(--ff-primary);
+     font-size: var(--fs-body);
+     font-weight: var(--fw-regular);
+     line-height: var(--line-height-body);
+     background: radial-gradient(var(--radical-gradient));
+     background-repeat: no-repeat;
+     position: relative;
+ }
+
+ /* styling  */
+ .game-container {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     /* align-items: center; */
+     align-content: space-between;
+     min-height: 100vh;
+ }
+
+ .game-inner-container {
+     width: 60rem;
+     margin-inline: auto;
+     padding-top: 4rem;
+ }
+
+ /* game banner  */
+
+ .game-banner {
+     display: flex;
+     justify-content: space-between;
+     border: 2px solid var(--header-outline);
+     padding: 1.5rem;
+     border-radius: var(--border-radius);
+ }
+
+ .score-container {
+     background-color: var(--whtie-clr);
+     width: 13rem;
+     border-radius: var(--border-radius);
+
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .score-container p {
+     text-transform: uppercase;
+     color: var(--score-text);
+     font-weight: var(--fw-medium);
+     letter-spacing: 1px;
+     padding-top: 1rem;
+ }
+
+ .score-container h1 {
+     font-size: clamp(2rem, 5vw, 5rem);
+     color: var(--dark-text);
+ }
+
+
+ /* game play  */
+ .game-play {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     grid-template-rows: repeat(2, 1fr);
+     row-gap: 2rem;
+     place-items: center;
+
+     width: 60rem;
+     padding-top: 3rem;
+ }
+
+ .game-play.step-1 {
+     background-image: url(bg-triangle.svg);
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: 250px 190px;
+ }
+
+ .options {
+     border-radius: 50%;
+     width: 15rem;
+     aspect-ratio: 1;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     cursor: pointer;
+ }
+
+ .options:nth-child(3) {
+     grid-area: 2 / 1 / 3 / -1;
+ }
+
+ #rock {
+     background: linear-gradient(var(--rock-gradient));
+ }
+
+ #scissors {
+     background: linear-gradient(var(--scissors-gradient));
+ }
+
+ #paper {
+     background: linear-gradient(var(--paper-gradient));
+ }
+
+ .circle {
+     width: 11rem;
+     aspect-ratio: 1;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--whtie-clr);
+ }
+
+
+ /* rules button  */
+
+ .rules-container {
+     display: flex;
+     justify-content: end;
+     padding-right: 4rem;
+     padding-bottom: 1rem;
+ }
+
+ .rules-container button {
+     padding: 0.5rem 3.5rem;
+     background: transparent;
+     border: 2px solid var(--whtie-clr);
+     color: var(--whtie-clr);
+     border-radius: 8px;
+     letter-spacing: 2px;
+     cursor: pointer;
+ }
+
+ /* step 2  */
+ .user-select-outer-circle {
+     border-radius: 50%;
+     width: 19rem;
+     aspect-ratio: 1;
+
+     display: flex;
+     justify-content: center;
+     align-items: center;
+
+     cursor: pointer;
+ }
+
+ .select-container {
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .select-container .circle {
+     width: 14rem;
+     aspect-ratio: 1;
+ }
+
+
+ .select-container h3 {
+     text-align: center;
+     padding-bottom: 3rem;
+     text-transform: uppercase;
+     color: var(--whtie-clr);
+ }
+
+
+ .result {
+     align-content: center;
+ }
+
+ .result h1 {
+     font-size: clamp(2rem, 3.2vw, 5rem);
+     color: var(--whtie-clr);
+     padding-bottom: 1rem;
+     text-align: center;
+ }
+
+ .play-again-container {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .result .play-again-container button {
+     width: 100%;
+     border-radius: 6px;
+     border: none;
+     padding-block: 1rem;
+     text-transform: uppercase;
+     font-weight: var(--fw-medium);
+     letter-spacing: 2px;
+     cursor: pointer;
+ }
+
+ .result.lose .play-again-container button {
+     color: hsl(349, 71%, 52%);
+ }
+
+ .result.win .play-again-container button {
+     color: var(--score-text);
+ }
+
+
+ /* rules design  */
+ .rules {
+     width: 400px;
+     /* background-color: red; */
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+
+     padding: 2rem;
+     position: absolute;
+
+     background-color: var(--whtie-clr);
+     border-radius: 8px;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+
+ .rules-header {
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     padding-bottom: 4rem;
+     align-items: center;
+ }
+
+ .rules-header h2 {
+     font-size: calc(2vw + 1rem);
+     color: var(--dark-text);
+ }
+
+ .close-icon {
+     cursor: pointer;
+ }
+
+
+ /* responsive code  */
+ @media(max-width: 680px) {
+     .game-inner-container {
+         width: 98%;
+     }
+
+     .game-play {
+         width: 100%;
+         padding-top: 2rem;
+     }
+
+
+     .select-container {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         place-items: center;
+     }
+
+     .result {
+         grid-area: 2 / 1 / 3 / -1;
+         justify-self: center;
+         padding-top: 3rem;
+     }
+
+     .result .play-again-container button {
+         width: 200px;
+     }
+
+ }
+
+ @media(max-width: 530px){
+    .rules {
+        width: 300px;
+    }
+ }
+
+ @media(max-width: 460px){
+    .user-select-outer-circle {
+        width: 15rem;
+        aspect-ratio: 1;
+    }
+
+    .select-container .circle {
+        width: 10rem;
+        aspect-ratio: 1;
+    }
+
+    .score-container {
+        width: 10rem;
+    }
+
+    .rules {
+        width: 250px;
+    }
+ }
